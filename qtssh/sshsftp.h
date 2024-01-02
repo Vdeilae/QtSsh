@@ -30,10 +30,11 @@ private:
     LIBSSH2_SFTP_ATTRIBUTES getFileInfo(const QString &path);
 
 protected:
-    SshSFtp(const QString &name, SshClient * client);
+    
     friend class SshClient;
 
 public:
+    SshSFtp(const QString &name, SshClient * client);
     virtual ~SshSFtp() override;
     void close() override;
 

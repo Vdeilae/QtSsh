@@ -4,17 +4,16 @@ Qt Library Wrapper to libssh2
 * This Project need to be included in a larger project with gitmodule
 * You just need to add include(QtSsh/QtSsh.pri) in your .pro, and to include/link with libssh2
 
-Here is Example code：  
+I modeifyed  SshSFtp(const QString &name, SshClient * client); turn it to public.(我修改了一下SshSFtp的默认构造函数，从protected类型改为public，直接从外部调用。)
+Here is Example code：（以下是我的实例代码）  
+
 
 #include <QCoreApplication>
 #include "sshsftp.h"
-
 #include "sshclient.h"
-
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
 
     SshClient *sshClient = new SshClient("SFTPClient");
 
